@@ -3,19 +3,19 @@
 	"type": "library",
 	"description": "PHP-HTML form manager",
 	"keywords": ["form", "PSR-7", "html", "data", "validator"],
-	"homepage": "https://github.com/oscarotero/form-manager",
+	"homepage": "https://github.com/Jazz-Man/form-html-generator",
 	"license": "MIT",
 	"authors": [
 		{
-			"name": "Oscar Otero",
-			"email": "oom@oscarotero.com",
-			"homepage": "http://oscarotero.com",
+			"name": "Vasul Sokolyk",
+			"email": "vsokolyk@gmail.com",
+			"homepage": "http://vsokolyk.com/",
 			"role": "Developer"
 		}
 	],
 	"support": {
-		"email": "oom@oscarotero.com",
-		"issues": "https://github.com/oscarotero/form-manager/issues"
+		"email": "vsokolyk@gmail.com",
+		"issues": "https://github.com/Jazz-Man/form-html-generator/issues"
 	},
 	"require": {
 		"php": ">=5.4.0",

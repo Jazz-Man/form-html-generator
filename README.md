@@ -1,18 +1,5 @@
 # FormManager
 
-[![Build Status](https://travis-ci.org/oscarotero/form-manager.png?branch=master)](https://travis-ci.org/oscarotero/form-manager)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/oscarotero/form-manager/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/oscarotero/form-manager/?branch=master)
-
-Created by Oscar Otero <http://oscarotero.com> <oom@oscarotero.com>
-
-## Installation:
-
-This package needs php>=5.4 and is available on [Packagist](https://packagist.org/packages/form-manager/form-manager):
-
-```
-composer require form-manager/form-manager
-```
-
 ## Usage
 
 ### Namespace import
