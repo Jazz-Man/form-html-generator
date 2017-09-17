@@ -31,17 +31,4 @@ class Submit extends Field
 	{
 		return $this->__call('html', func_get_args());
 	}
-
-	/**
-	 * @see RenderTrait
-	 *
-	 * @param string $prepend
-	 * @param string $append
-	 *
-	 * @return string
-	 */
-	protected function defaultRender($prepend = '', $append = '')
-	{
-		return "{$prepend}{$this->input}{$append}";
-	}
 }

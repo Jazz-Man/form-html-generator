@@ -74,7 +74,7 @@ interface FieldInterface extends ElementInterface
 	 *
 	 * @return bool
 	 */
-	public function validate($test = null);
+	public function validate();
 
 	/**
 	 * Set/Get the current error message.

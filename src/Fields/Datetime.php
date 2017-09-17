@@ -16,6 +16,8 @@ class Datetime extends Field
 	 */
 	public function __construct()
 	{
-		parent::__construct((new InputDatetime('Y-m-d\TH:i:sP'))->attr('type', 'datetime'));
+		parent::__construct(new InputDatetime('Y-m-d\TH:i:sP'));
+
+        $this->input->attr('type', 'datetime');
 	}
 }

@@ -7,13 +7,6 @@ namespace FormManager\Elements;
  */
 class InputNumber extends Input
 {
-	/**
-	 * InputNumber constructor.
-	 */
-	public function __construct()
-	{
-		$this->addValidator('FormManager\\Validators\\Number::validate');
-	}
 
 	/**
 	 * @see \FormManager\InputInterface

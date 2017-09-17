@@ -128,18 +128,13 @@ abstract class Container extends Div implements FieldInterface
 	/**
 	 * @see InputInterface
 	 */
-	public function validate($test = null)
+	public function validate()
 	{
-		$result = true;
-//		$result = $this->validateThis();
+		$result = $this->validateThis();
 
 		/** @var \FormManager\Fields\Field|\FormManager\Fields\Group $child */
 
-
-
 		foreach ($this->children as $child) {
-
-//		    dump($child);
 
 			if ($child->validate() === false) {
 				$result = false;

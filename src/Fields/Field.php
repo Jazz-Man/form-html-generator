@@ -12,7 +12,13 @@ use FormManager\Traits\RenderTrait;
  * Class to manage the combination of an input with other elements.
  * @method $this placeholder($value = null)
  * @method $this required(bool $required = true)
- * @method Elements\Element addClass($class)
+ *
+ * @method Elements\Element data($name = null, $value = null)
+ * @method Elements\Element removeData(string $name = null)
+ * @method Elements\Element addClass(array|string $class)
+ * @method Elements\Element removeClass(string $class)
+ * @method Elements\Element hasClass(string $class)
+ *
  * @method CollectionMultiple|Collection getTemplate()
  *
  */
@@ -175,9 +181,10 @@ abstract class Field implements FieldInterface
 		return $this;
 	}
 
-	/**
-	 * @see FieldInterface
-	 */
+    /**
+     * @see FieldInterface
+     * @return string
+     */
 	public function __toString()
 	{
 		return $this->toHtml();
@@ -351,7 +358,7 @@ abstract class Field implements FieldInterface
 	 *
 	 * @return bool
 	 */
-	public function validate($test = null)
+	public function validate()
 	{
 		return $this->input->validate();
 	}

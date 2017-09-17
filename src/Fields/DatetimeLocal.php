@@ -16,6 +16,8 @@ class DatetimeLocal extends Field
 	 */
 	public function __construct()
 	{
-		parent::__construct((new InputDatetime('Y-m-d\TH:i:s'))->attr('type', 'datetime-local'));
+		parent::__construct((new InputDatetime('Y-m-d\TH:i:s')));
+
+        $this->input->attr('type', 'datetime-local');
 	}
 }
