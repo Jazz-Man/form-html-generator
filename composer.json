@@ -5,18 +5,13 @@
 	"keywords": ["form", "PSR-7", "html", "data", "validator"],
 	"homepage": "https://github.com/Jazz-Man/form-html-generator",
 	"license": "MIT",
-	"authors": [
+	"repositories": [
 		{
-			"name": "Vasul Sokolyk",
-			"email": "vsokolyk@gmail.com",
-			"homepage": "http://vsokolyk.com/",
-			"role": "Developer"
+			"type": "vcs",
+			"url": "https://github.com/Jazz-Man/form-html-generator"
 		}
 	],
-	"support": {
-		"email": "vsokolyk@gmail.com",
-		"issues": "https://github.com/Jazz-Man/form-html-generator/issues"
-	},
+
 	"require": {
 		"php": ">=5.4.0",
 		"psr/http-message": "~1.0"
