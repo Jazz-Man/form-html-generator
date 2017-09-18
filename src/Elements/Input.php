@@ -31,11 +31,9 @@ class Input extends Element implements InputInterface
 	 */
 	public function attr($name = null, $value = null)
 	{
-
 		if (is_string($name)) {
 			if ($value === null) {
-
-			    if ($name === 'name' && $this->getParent()) {
+				if ($name === 'name' && $this->getParent()) {
 					return $this->getPath();
 				}
 
@@ -47,7 +45,6 @@ class Input extends Element implements InputInterface
 			}
 
 			$value = $this->attrToValidator($name, $value);
-
 		}
 
 		return parent::attr($name, $value);

@@ -14,6 +14,13 @@ class InputFile extends Input
 	protected $attributes = ['type' => 'file'];
 	protected $value;
 
+	/**
+	 * InputFile constructor.
+	 */
+//	public function __construct()
+//	{
+//		$this->addValidator('FormManager\\Validators\\File::validate');
+//	}
 
 	/**
 	 * @see \FormManager\InputInterface

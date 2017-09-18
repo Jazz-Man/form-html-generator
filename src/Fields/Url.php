@@ -18,5 +18,6 @@ class Url extends Field
 	{
 		parent::__construct(new Input());
 		$this->input->attr('type', 'url');
-    }
+		$this->addValidator('FormManager\\Validators\\Url::validate');
+	}
 }

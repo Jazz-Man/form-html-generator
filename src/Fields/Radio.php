@@ -16,4 +16,17 @@ class Radio extends Field
 	{
 		parent::__construct(new InputRadio());
 	}
+
+	/**
+	 * @see RenderTrait
+	 *
+	 * @param string $prepend
+	 * @param string $append
+	 *
+	 * @return string
+	 */
+	protected function defaultRender($prepend = '', $append = '')
+	{
+		return "{$prepend}{$this->input} {$this->label} {$this->errorLabel}{$append}";
+	}
 }

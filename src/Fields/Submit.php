@@ -2,7 +2,7 @@
 
 namespace FormManager\Fields;
 
-use FormManager\Elements\Button;
+use FormManager\Elements\Input;
 
 /**
  * Class Submit.
@@ -16,7 +16,7 @@ class Submit extends Field
 	 */
 	public function __construct()
 	{
-		parent::__construct( new Button() );
+		parent::__construct( new Input() );
 		$this->input->attr('type', 'submit');
 	}
 
@@ -31,4 +31,5 @@ class Submit extends Field
 	{
 		return $this->__call('html', func_get_args());
 	}
+
 }

@@ -105,7 +105,7 @@ class HtmlBlock extends Element implements InputInterface
      *
      * @return bool
      */
-    public function validate()
+    public function validate($test = null)
     {
         // TODO: Implement validate() method.
     }

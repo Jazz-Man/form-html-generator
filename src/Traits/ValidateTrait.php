@@ -62,7 +62,7 @@ trait ValidateTrait
 	 *
 	 * @return bool
 	 */
-	public function validate()
+	public function validate($test = null)
 	{
 		$this->error = null;
 
@@ -123,7 +123,7 @@ trait ValidateTrait
 	 *
 	 * @param null $value
 	 *
-	 * @return $this|array|mixed|null|string
+	 * @return $this
 	 */
 	public function val($value = null)
 	{
@@ -138,10 +138,10 @@ trait ValidateTrait
 
 	/**
 	 * Check an attribute before add it.
-	 *
+	 * 
 	 * @param string $name
 	 * @param mixed  $value
-	 *
+	 * 
 	 * @return mixed
 	 */
 	private function attrToValidator($name, $value)
@@ -154,4 +154,16 @@ trait ValidateTrait
 
 		return $value;
 	}
+
+	/**
+	 * Required method to load/return values.
+	 *
+	 * @see ElementInterface
+	 *
+	 * @param null $name
+	 * @param null $value
+	 *
+	 * @return
+	 */
+	abstract public function attr($name = null, $value = null);
 }

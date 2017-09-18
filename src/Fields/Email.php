@@ -9,13 +9,14 @@ use FormManager\Elements\Input;
  */
 class Email extends Field
 {
-    /**
-     * Email constructor.
-     */
-    public function __construct()
-    {
-        parent::__construct(new Input());
+	/**
+	 * Email constructor.
+	 */
+	public function __construct()
+	{
+		parent::__construct(new Input());
 
-        $this->input->attr('type', 'email');
-    }
+		$this->input->attr('type', 'email');
+		$this->input->addValidator('FormManager\\Validators\\Email::validate');
+	}
 }

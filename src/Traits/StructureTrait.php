@@ -36,11 +36,9 @@ trait StructureTrait
 
 		$path = $parent->getPath();
 
-
 		if ($path) {
 			if (mb_strpos($this->key, '[') !== false) {
 				list($p1, $p2) = explode('[', $this->key, 2);
-
 
 				return "{$path}[{$p1}][{$p2}";
 			}
@@ -57,4 +55,12 @@ trait StructureTrait
 		}
 	}
 
+	/**
+	 * Returns the element parent.
+	 *
+	 * @see \FormManager\TreeInterface
+	 *
+	 * @return null|\FormManager\ElementInterface
+	 */
+	abstract public function getParent();
 }

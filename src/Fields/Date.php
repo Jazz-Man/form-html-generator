@@ -16,8 +16,6 @@ class Date extends Field
 	 */
 	public function __construct()
 	{
-		parent::__construct(new InputDatetime('Y-m-d'));
-
-        $this->input->attr('type', 'date');
+		parent::__construct((new InputDatetime('Y-m-d'))->attr('type', 'date'));
 	}
 }

@@ -47,8 +47,8 @@ abstract class Container extends Div implements FieldInterface
 		}
 		/** @var Field $child */
 		foreach ($this->children as $key => $child) {
-            $child->load(isset($value[$key]) ? $value[$key] : null);
-        }
+			$child->load($value[$key] ?? null);
+		}
 
 		return $this;
 	}
@@ -62,24 +62,20 @@ abstract class Container extends Div implements FieldInterface
 	 */
 	public function val($value = null)
 	{
-
-		/** @var \FormManager\Fields\Field|\FormManager\Fields\Group $child */
+		/* @var \FormManager\Fields\Field|\FormManager\Fields\Group $child */
 
 		if ($value === null) {
 			$values = [];
 			foreach ($this->children as $key => $child) {
-
 				$values[$key] = $child->val();
 			}
 
 			return $values;
 		}
 
-
-        foreach ($this->children as $key => $child) {
-
-            $child->val(isset($value[$key]) ? $value[$key] : null);
-        }
+		foreach ($this->children as $key => $child) {
+			$child->val($value[$key] ?? null);
+		}
 
 		return $this;
 	}
@@ -98,7 +94,6 @@ abstract class Container extends Div implements FieldInterface
 		}
 
 		/** @var \FormManager\Fields\Field $child */
-
 		foreach ($this->children as $child) {
 			if ($child instanceof self) {
 				foreach ($child->getElementsWithErrors() as $element) {
@@ -133,9 +128,7 @@ abstract class Container extends Div implements FieldInterface
 		$result = $this->validateThis();
 
 		/** @var \FormManager\Fields\Field|\FormManager\Fields\Group $child */
-
 		foreach ($this->children as $child) {
-
 			if ($child->validate() === false) {
 				$result = false;
 			}

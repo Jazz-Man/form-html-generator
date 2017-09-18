@@ -8,7 +8,6 @@ use FormManager\Fields\Form;
 /**
  * Class to manage an html element.
  * @property \FormManager\Fields\Field $parent
- *
  */
 class Element implements ElementInterface
 {
@@ -21,7 +20,7 @@ class Element implements ElementInterface
 	protected $attributes = [];
 	protected $data = [];
 	protected $vars = [];
-	protected $html_cotent;
+	protected $html;
 
 	/**
 	 * Escapes a property value.
@@ -76,12 +75,11 @@ class Element implements ElementInterface
 		return $this;
 	}
 
-    /**
-     * @see ElementInterface
-     *
-     * @return string
-     */
-    public function __toString()
+
+	/**
+	 * @see ElementInterface
+	 */
+	public function __toString()
 	{
 		try {
 			$string = $this->toHtml();
@@ -136,12 +134,10 @@ class Element implements ElementInterface
 		return $this;
 	}
 
-    /**
-     * @see ElementInterface
-     *
-     * @return \FormManager\Fields\Field
-     */
-    public function getParent()
+	/**
+	 * @see ElementInterface
+	 */
+	public function getParent()
 	{
 		return $this->parent;
 	}
@@ -155,11 +151,11 @@ class Element implements ElementInterface
 	 */
 	public function html($html = null)
 	{
-	    if ($html === null) {
-			return $this->html_cotent;
+		if ($html === null) {
+			return $this->html;
 		}
 
-		$this->html_cotent = $html;
+		$this->html = $html;
 
 		return $this;
 	}
@@ -206,6 +202,12 @@ class Element implements ElementInterface
 	{
 		if (isset($this->attributes[$name])) {
 			unset($this->attributes[$name]);
+
+			$class = 'FormManager\\Attributes\\'.ucfirst($name);
+
+			if (class_exists($class) && method_exists($class, 'onRemove')) {
+				$class::onRemove($this);
+			}
 		}
 
 		return $this;
@@ -231,14 +233,14 @@ class Element implements ElementInterface
 		return $this->attr('id');
 	}
 
-    /**
-     * Set/Get data attributes (data-*) to the element.
-     *
-     * @param null|array|string $name  The data name. If is null, returns an array with all data
-     * @param null|string $value The data value. null to getter, string to setter
-     *
-     * @return $this|array|mixed|null
-     */
+	/**
+	 * Set/Get data attributes (data-*) to the element.
+	 *
+	 * @param null|string $name  The data name. If is null, returns an array with all data
+	 * @param null|string $value The data value. null to getter, string to setter
+	 *
+	 * @return mixed
+	 */
 	public function data($name = null, $value = null)
 	{
 		if ($name === null) {
