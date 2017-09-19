@@ -47,7 +47,8 @@ abstract class Container extends Div implements FieldInterface
 		}
 		/** @var Field $child */
 		foreach ($this->children as $key => $child) {
-			$child->load($value[$key] ?? null);
+
+		    $child->load(isset($value[$key]) ? $value[$key] : null);
 		}
 
 		return $this;
@@ -74,13 +75,14 @@ abstract class Container extends Div implements FieldInterface
 		}
 
 		foreach ($this->children as $key => $child) {
-			$child->val($value[$key] ?? null);
+			$child->val(isset($value[$key]) ? $value[$key] : null);
 		}
 
 		return $this;
 	}
 
-	/**
+
+    /**
 	 * Returns all childrens contaning errors.
 	 *
 	 * @return array
