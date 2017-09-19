@@ -17,6 +17,5 @@ class Email extends Field
 		parent::__construct(new Input());
 
 		$this->input->attr('type', 'email');
-		$this->input->addValidator('FormManager\\Validators\\Email::validate');
 	}
 }

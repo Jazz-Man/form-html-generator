@@ -22,13 +22,7 @@ class Select extends ElementContainer implements InputInterface
 	protected $allowNewValues = false;
 	protected $optgroups = [];
 
-	/**
-	 * Select constructor.
-	 */
-	public function __construct()
-	{
-		$this->addValidator('FormManager\\Validators\\Select::validate');
-	}
+
 
 	/**
 	 * @param null $name
