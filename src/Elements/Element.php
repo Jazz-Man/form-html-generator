@@ -381,43 +381,6 @@ class Element implements ElementInterface
 	}
 
 	/**
-	 * Set variables.
-	 *
-	 * @param string|array $name
-	 * @param mixed        $value
-	 *
-	 * @return $this
-	 */
-	public function set($name, $value = null)
-	{
-		if (is_array($name)) {
-			$this->vars = array_replace($this->vars, $name);
-
-			return $this;
-		}
-
-		$this->vars[$name] = $value;
-
-		return $this;
-	}
-
-	/**
-	 * Get variables.
-	 *
-	 * @param null|string $name If it's null, returns an array with all variables
-	 *
-	 * @return mixed
-	 */
-	public function get($name = null)
-	{
-		if ($name === null) {
-			return $this->vars;
-		}
-
-		return isset($this->vars[$name]) ? $this->vars[$name] : null;
-	}
-
-	/**
 	 * Returns the form element.
 	 *
 	 * @return null|Form
