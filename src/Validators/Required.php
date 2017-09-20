@@ -11,7 +11,7 @@ use FormManager\InvalidValueException;
  */
 class Required
 {
-	public static $error_message = 'This value is required';
+	public static $error_message = 'Dette felt skal udfyldes';
 
 	/**
 	 * Validates the input value according to this attribute.
